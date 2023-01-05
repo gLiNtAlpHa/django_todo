@@ -1,1 +1,16 @@
 <h1>HELLO MOF</h1>
+
+<table>
+    <tr>
+        <th>Item</th>
+    </tr>
+    {% for task in object_list%}
+     <tr>
+        <th>{{task.tittle}}</th>
+    </tr>
+    {% empty %}
+    <h3>
+        No item in list
+    </h3>
+    {% endfor %}
+</table>
