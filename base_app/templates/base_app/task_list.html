@@ -7,12 +7,15 @@
     <tr>
         <th>Item</th>
          <th> </th>
+        <th> </th>
     </tr>
     {% for task in object_list%}
      <tr>
         <th>{{task.tittle}}</th>
          <th>
              <a href="{% url 'task' task.id %}"> View </a>
+             <a href="{% url 'task-update' task.id %}"> Edit  </a>
+             <a href="{% url 'task-del' task.id %}"> Delete  </a>
          </th>
     </tr>
     {% empty %}
