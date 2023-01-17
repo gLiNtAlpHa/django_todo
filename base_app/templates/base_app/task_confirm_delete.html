@@ -2,9 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>confirm delete</title>
 </head>
 <body>
+<a href="{% url 'tasks' %}"> Go back </a>
+<form method="post" action="">
+    {% csrf_token %}
+    <p>
+        Are you sure you want to del this task? {{task}}
+    </p>
+    <input type="submit" value="Delete">
+</form>
 
 </body>
 </html>

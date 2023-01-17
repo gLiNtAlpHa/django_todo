@@ -1,3 +1,8 @@
+
+<p>{{request.user}}</p>
+
+
+<hr>
 <h1>My To Do List</h1>
 <a href="{% url 'task-create' %}">
  Ad Task
@@ -6,7 +11,7 @@
 <table>
     <tr>
         <th>Item</th>
-         <th> </th>
+         <th>  </th>
         <th> </th>
     </tr>
     {% for task in object_list%}
@@ -15,7 +20,7 @@
          <th>
              <a href="{% url 'task' task.id %}"> View </a>
              <a href="{% url 'task-update' task.id %}"> Edit  </a>
-             <a href="{% url 'task-del' task.id %}"> Delete  </a>
+             <a href="{% url 'task-delete' task.id %}"> Delete  </a>
          </th>
     </tr>
     {% empty %}
