@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task-App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@200&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+        background-color: #fff;
+        font-family: 'Sofia Sans', sans-serif;
+        padding-top:50px;
+
+
+        }
+        .container{
+        max-width:550px;
+        margin:auto;
+        text-align:center;
+        background-color: #fff;
+       border-radius: 56px 28px 55px 16px;
+-webkit-border-radius: 56px 28px 55px 16px;
+-moz-border-radius: 56px 28px 55px 16px;
+        box-shadow:  15px 20px 0 rgba(0, 0,0,0.21), inset 0 -8px 9px 0 #e5e4e4;
+
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+  {% block content %}
+
+  {% endblock content %}
+</div>
+</body>
+</html>

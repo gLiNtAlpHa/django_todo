@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Register Page </title>
-</head>
-<body>
+{% extends 'base_app/main.html' %}
+{% block content %}
 <h1>
     Register
 </h1>
@@ -15,5 +10,7 @@
     <p>Already have an account ? <a href="{% url 'login' %}">Login Here</a></p>
 
 </form>
-</body>
-</html>
+
+{% endblock content %}
+
+

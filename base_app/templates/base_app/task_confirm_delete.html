@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>confirm delete</title>
-</head>
-<body>
+{% extends 'base_app/main.html' %}
+{% block content %}
+
 <a href="{% url 'tasks' %}"> Go back </a>
 <form method="post" action="">
     {% csrf_token %}
@@ -14,5 +10,8 @@
     <input type="submit" value="Delete">
 </form>
 
-</body>
-</html>
+{% endblock content %}
+
+
+
+

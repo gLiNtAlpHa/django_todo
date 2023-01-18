@@ -1,3 +1,6 @@
+{% extends 'base_app/main.html' %}
+{% block content %}
+
 {% if request.user.is_authenticated %}
 <p>{{request.user}}</p>
 <a href="{% url 'logout' %}">Logout</a>
@@ -25,7 +28,7 @@
      <tr>
         <th>{{task.tittle}}</th>
          <th>
-             <a href="{% url 'task' task.id %}"> View </a>
+<!--             -->
              <a href="{% url 'task-update' task.id %}"> Edit  </a>
              <a href="{% url 'task-delete' task.id %}"> Delete  </a>
          </th>
@@ -36,3 +39,6 @@
     </h3>
     {% endfor %}
 </table>
+
+{% endblock content %}
+
