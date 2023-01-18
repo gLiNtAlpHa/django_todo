@@ -24,26 +24,44 @@ class TaskList(LoginRequiredMixin, ListView):
     model = Task
     context_object_name = 'tasks'
 
+    # tasks = Task.objects.all()
+    # for task in tasks:
+    #     print(f'user taslisk: {task.user}')
 
-class TaskDetail(DetailView):
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # print(f'related field: {context["tasks"].model.user.field.name}')
+        # print(Task._meta.get_field("user").related_query_name())
+        context['tasks'] = context['tasks'].filter(user=self.request.user)
+        context['count'] = context['tasks'].filter(complete=False).count()
+        return context
+
+
+class TaskDetail(LoginRequiredMixin, DetailView):
     model = Task
     context_object_name = 'task'
     template_name = "base_app/task.html"
 
 
-class TaskCreate(CreateView):
+class TaskCreate(LoginRequiredMixin, CreateView):
+    model = Task
+    fields = '__all__'
+    success_url = reverse_lazy('tasks')
+
+    def form_valid(self, form):
+        print(f'user: {form.instance.user}')
+        return super().form_valid(form)
+
+
+
+
+class TaskUpdate(LoginRequiredMixin, UpdateView):
     model = Task
     fields = '__all__'
     success_url = reverse_lazy('tasks')
 
 
-class TaskUpdate(UpdateView):
-    model = Task
-    fields = '__all__'
-    success_url = reverse_lazy('tasks')
-
-
-class DeleteView(DeleteView):
+class DeleteView(LoginRequiredMixin, DeleteView):
     model = Task
     context_object_name = 'task'
     success_url = reverse_lazy('tasks')
