@@ -14,4 +14,4 @@ class Task(models.Model):
         return self.tittle
 
     class Meta:
-        ordering = ['complete',]
+        ordering = ["complete",]
