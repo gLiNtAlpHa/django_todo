@@ -15,7 +15,7 @@ from django.contrib.auth import login
 # Register your models here.
 class CustomLoginView(LoginView):
     template_name = 'base_app/login.html'
-    fields = '__all__'
+     
     redirect_authenticated_user = True
 
     def get_success_url(self):
