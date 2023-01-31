@@ -11,7 +11,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 
-
 # Register your models here.
 class CustomLoginView(LoginView):
     template_name = 'base_app/login.html'
